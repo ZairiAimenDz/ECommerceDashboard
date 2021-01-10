@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - InventoryMangement</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/sb-admin-2.min.css" />
+</head>
+<body>
+
+
+    <div id="wrapper">
+        <ul class="navbar-nav bg-gradient-info sidebar sidebar-dark accordion" id="accordionSidebar">
+
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" asp-page="/Index">
+                <div class="sidebar-brand-text mx-3">Inventory Management</div>
+            </a>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item active">
+                <a class="nav-link" asp-area="" asp-page="/Admin/Index">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Inventory
+            </div>
+
+            <li class="nav-item active">
+                <a class="nav-link" asp-area="" asp-page="/Admin/Products/Index">
+                    <i class="fas fa-fw fa-boxes"></i>
+                    <span>Products</span>
+                </a>
+            </li>
+
+            <li class="nav-item active">
+                <a class="nav-link" href="index.html">
+                    <i class="fas fa-fw fa-clipboard-list"></i>
+                    <span>Orders</span>
+                </a>
+            </li>
+
+            <li class="nav-item active">
+                <a class="nav-link" href="index.html">
+                    <i class="fas fa-fw fa-dolly"></i>
+                    <span>Deliveries</span>
+                </a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Users
+            </div>
+
+            <li class="nav-item">
+                <a class="nav-link" href="charts.html">
+                    <i class="fas fa-fw fa-users"></i>
+                    <span>Customers</span>
+                </a>
+            </li>
+
+            <!-- Nav Item - Charts -->
+            <li class="nav-item">
+                <a class="nav-link" href="charts.html">
+                    <i class="fas fa-fw fa-exchange-alt"></i>
+                    <span>Providers</span>
+                </a>
+            </li>
+
+            <!-- Nav Item - Tables -->
+            <li class="nav-item">
+                <a class="nav-link" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">
+                    <i class="fas fa-fw fa-users-cog"></i>
+                    <span>Users</span>
+                </a>
+            </li>
+
+            <!-- Nav Item - Tables -->
+            <li class="nav-item">
+                <a class="nav-link" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">
+                    <i class="fas fa-fw fa-user-cog"></i>
+                    <span>Settings</span>
+                </a>
+            </li>
+
+
+        </ul>
+
+        <div class="container-fluid">
+            <main role="main" class="py-2 px-3">
+                @RenderBody()
+            </main>
+        </div>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/sb-admin-2.min.js"></script>
+    <script src="~/js/all.js"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
