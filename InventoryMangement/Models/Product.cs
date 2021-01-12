@@ -23,6 +23,7 @@ namespace InventoryMangement.Models
         public string Location { get; set; }
         [Required]
         public double Price { get; set; }
+        public virtual Provider Provider { get; set; }
 
     }
 

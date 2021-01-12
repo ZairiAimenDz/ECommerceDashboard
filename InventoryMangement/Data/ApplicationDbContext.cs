@@ -14,5 +14,7 @@ namespace InventoryMangement.Data
         {
         }
         public DbSet<InventoryMangement.Models.Product> Product { get; set; }
+        public DbSet<InventoryMangement.Models.Customer> Customer { get; set; }
+        public DbSet<InventoryMangement.Models.Provider> Provider { get; set; }
     }
 }

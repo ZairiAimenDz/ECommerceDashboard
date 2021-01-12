@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using InventoryMangement.Data;
 using InventoryMangement.Models;
 
-namespace InventoryMangement.Pages.Admin.Products
+namespace InventoryMangement.Pages.Admin.Providers
 {
     public class CreateModel : PageModel
     {
@@ -19,17 +19,13 @@ namespace InventoryMangement.Pages.Admin.Products
             _context = context;
         }
 
-        public List<Provider> Providers = new List<Provider>();
         public IActionResult OnGet()
         {
-            Providers = _context.Provider.ToList();
             return Page();
         }
 
         [BindProperty]
-        public Product Product { get; set; }
-        [BindProperty]
-        public Guid ProviderID { get; set; }
+        public Provider Provider { get; set; }
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
@@ -38,11 +34,8 @@ namespace InventoryMangement.Pages.Admin.Products
             {
                 return Page();
             }
-            var prov = _context.Provider.Find(ProviderID);
-            if (prov != null)
-            {
-                prov.Products.Add(Product);
-            }
+
+            _context.Provider.Add(Provider);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");
